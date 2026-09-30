@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_cart/providers/products_provider.dart';
 import '../../shared/cart_icon.dart';
 
-class HomeScreen extends StatelessWidget {
+// Consumer Widget is used when we have StateLess Widget that wants to consume some provider states
+// ConsumerWidget -> (ONLY USED FOR STATELESS WIDGET)
+
+// for StateFul widget which needs to consume provider state we use ConsumerStateFulWidget
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // WidgetRef -> through ref object we can use different methods to do things like
+
+    final allProducts = ref.watch(productsProvider);
+
+    // WATCH PROVIDER:
+    // read provider data, watch provider data, get the updated data, refresh the provider state
+     // read the data once for us and then watches the changes
+    // if the data ever gets changed it will force the build method to rerun and get that
+    // updated value for us
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Garage Sale Products'),
@@ -14,7 +30,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: GridView.builder(
-          itemCount: 8,
+          itemCount: allProducts.length,
           gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 20,
@@ -25,6 +41,40 @@ class HomeScreen extends StatelessWidget {
             return Container(
               padding: const EdgeInsets.all(20),
               color: Colors.blueGrey.withValues(alpha: 0.05),
+              child: Column(
+                children: [
+                  Image.asset( // to display the image
+                    allProducts[index].image,
+                    width: 60,
+                    height: 60,
+                  ),
+
+                  SizedBox(height: 10,),
+
+                  Text( // to display the name of the product
+                      allProducts[index].title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      height: 1,
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+
+                  SizedBox(height: 18,),
+
+                  Text( // to display the price of the product
+                    '₹${allProducts[index].price}',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      height: 0.5,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),
@@ -32,3 +82,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+// how to consume a provider inside a StateLess Widget:
+// By extending ConsumerWidget instead of StateLess Widget that allows us to access
+// ref as a second argument inside build method.

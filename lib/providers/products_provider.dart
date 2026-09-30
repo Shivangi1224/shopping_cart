@@ -14,6 +14,7 @@ const List<Product> allProducts = [
   Product(id: '6', title: 'Sneakers', price: 81, image: 'assets/products/sneakers.png'),
   Product(id: '7', title: 'Wrist watch', price: 45, image: 'assets/products/watch.png'),
   Product(id: '8', title: 'Water Bottle', price: 23, image: 'assets/products/waterbottle.png'),
+  Product(id: '9', title: 'Red Backpack', price: 20, image: 'assets/products/backpack.png'),
 ];
 
 // make a provider which can provide this data to the widgets within the application
