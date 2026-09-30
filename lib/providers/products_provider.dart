@@ -3,7 +3,10 @@ starting 1 min ka write
  */
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_cart/models/product.dart';
+
+part 'products_provider.g.dart'; // this is the file which riverpod will generate
 
 const List<Product> allProducts = [
   Product(id: '1', title: 'Ear Buds', price: 343, image: 'assets/products/earbuds.png'),
@@ -19,10 +22,24 @@ const List<Product> allProducts = [
 
 // make a provider which can provide this data to the widgets within the application
 
+/* replacing this with the generated code (by riverpod)
 final productsProvider = Provider((ref) {
   return allProducts;
 }); // provider 1 -> provides all products
+*/
 
 final reducedProducts = Provider((ref) {
   return allProducts.where((p) => p.price < 150).toList();
 }); // provider 2 -> provides products which has price less than 150
+
+// generated providers - riverpod generator which can generate provider for us
+// install from terminal: flutter pub add riverpod_annotation
+//                        flutter pub add dev:riverpod_generator
+
+// for generation:flutter pub add dev:build_runner
+// dart run build_runner watch
+
+@riverpod // this annotation is used for telling that we are writing a generator code
+List<Product> products(ref) {
+  return allProducts;
+}
