@@ -5,7 +5,7 @@ import 'screens/home/home_screen.dart';
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
-// now whole tree can access the providers by wrapping MyApp() around ProviderScope
+// now whole widget tree can access the providers by wrapping MyApp() around ProviderScope
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
