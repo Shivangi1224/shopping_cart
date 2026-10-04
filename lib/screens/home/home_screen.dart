@@ -48,8 +48,8 @@ class HomeScreen extends ConsumerWidget {
                 children: [
                   Image.asset( // to display the image
                     allProducts[index].image,
-                    width: 60,
-                    height: 60,
+                    width: 75,
+                    height: 75,
                   ),
 
                   SizedBox(height: 10,),

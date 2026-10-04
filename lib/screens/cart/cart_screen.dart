@@ -23,6 +23,8 @@ class _CartScreenState extends ConsumerState<CartScreen> {
     // now we can use ref object inside thr build method
 
     final cartProducts = ref.watch(cartNotifierProvider);
+    final total = ref.watch(cartTotalProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -69,11 +71,30 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                       ],
                     ),
                 );
-              }).toList(),
-               // output cart products here
+              }).toList(), // output cart products here
+            ),
+            // output totals here
+            Text(
+              'Total Price',
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+                color: Colors.grey,
+              ),
             ),
 
-            // output totals here
+            const SizedBox(height: 4),
+
+            Text(
+              '₹$total',
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 28,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.5,
+              ),
+            ),
           ],
         ),
       ),
