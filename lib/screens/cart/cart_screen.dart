@@ -30,9 +30,11 @@ class _CartScreenState extends ConsumerState<CartScreen> {
         title: const Text(
             'Your Cart',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+            height: 0.5,
             fontFamily: 'Poppins',
-            height: 1,
           ),
         ),
         centerTitle: true,

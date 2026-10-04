@@ -29,7 +29,7 @@ class CartIcon extends ConsumerWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.blueAccent,
+              color: Colors.deepPurple,
             ),
             child: Text(
               numberOfItemsInCart.toString(),

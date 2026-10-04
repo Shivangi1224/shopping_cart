@@ -1,0 +1,32 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="900" rx="80" fill="#F8F5FF"/>
+<circle cx="450" cy="410" r="300" fill="#E9DFFF"/>
+<circle cx="210" cy="180" r="12" fill="#FFD54F"/>
+<circle cx="700" cy="230" r="10" fill="#FFD54F"/>
+<circle cx="735" cy="600" r="14" fill="#FFD54F"/>
+<path d="M155 310L165 340L195 350L165 360L155 390L145 360L115 350L145 340L155 310Z" fill="#FFD54F"/>
+<path d="M700 350L708 374L732 382L708 390L700 414L692 390L668 382L692 374L700 350Z" fill="#FFD54F"/>
+<path d="M250 470H295L330 635C335 658 355 675 379 675H620" stroke="#6C4AB6" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M315 520H690L650 620H338L315 520Z" fill="#8B68D8"/>
+<circle cx="385" cy="715" r="30" fill="#4B3287"/>
+<circle cx="605" cy="715" r="30" fill="#4B3287"/>
+<rect x="420" y="385" width="175" height="135" rx="18" fill="#FFD54F"/>
+<rect x="493" y="385" width="30" height="135" fill="#FFB300"/>
+<rect x="400" y="360" width="215" height="45" rx="16" fill="#FFC107"/>
+<path d="M505 360C475 330 438 337 438 360C438 382 474 382 505 360Z" fill="#FFB300"/>
+<path d="M505 360C535 330 572 337 572 360C572 382 536 382 505 360Z" fill="#FFB300"/>
+<path d="M575 255C575 190 625 145 685 145C745 145 795 190 795 255" stroke="#6C4AB6" stroke-width="25" stroke-linecap="round"/>
+<rect x="555" y="245" width="48" height="105" rx="22" fill="#8B68D8"/>
+<rect x="770" y="245" width="48" height="105" rx="22" fill="#8B68D8"/>
+<path d="M260 390L305 350L350 375L390 340L435 390L395 430L365 410V500H260V410L230 430L190 390L235 340L280 375L260 390Z" fill="#D9C8FF"/>
+<path d="M280 375L305 350L330 375" stroke="#6C4AB6" stroke-width="12" stroke-linecap="round"/>
+<circle cx="665" cy="465" r="58" fill="#FFD54F"/>
+<circle cx="665" cy="465" r="42" stroke="#FFB300" stroke-width="8"/>
+<path d="M677 435C671 429 662 426 652 428C639 430 633 440 638 449C643 457 653 458 665 462C677 466 684 471 682 482C680 494 668 501 655 499C645 498 637 493 632 486" stroke="#B36B00" stroke-width="9" stroke-linecap="round"/>
+<path d="M660 420V510" stroke="#B36B00" stroke-width="7" stroke-linecap="round"/>
+<path d="M160 610L225 575L290 610V690L225 725L160 690V610Z" fill="#F4B860"/>
+<path d="M225 575V650L290 610" stroke="#C8842D" stroke-width="8"/>
+<path d="M160 610L225 650L290 610" stroke="#C8842D" stroke-width="8"/>
+<path d="M210 590L250 612" stroke="#FFD54F" stroke-width="12" stroke-linecap="round"/>
+<path d="M110 520L120 550L150 560L120 570L110 600L100 570L70 560L100 550L110 520Z" fill="#8B68D8"/>
+</svg>

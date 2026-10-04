@@ -26,7 +26,16 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Garage Sale Products'),
+        title: const Text(
+          'Treasure Cart',
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+            height: 0.5,
+            fontFamily: 'Poppins',
+          ),
+        ),
         actions: const [CartIcon()],
       ),
       body: Padding(
@@ -60,7 +69,7 @@ class HomeScreen extends ConsumerWidget {
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       height: 1,
-                      fontSize: 23,
+                      fontSize: 22,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
