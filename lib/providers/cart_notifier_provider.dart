@@ -10,7 +10,7 @@ class CartNotifier extends Notifier<Set<Product>>{
   @override
   Set<Product> build(){
     return {
-      Product(id: '6', title: 'Sneakers', price: 81, image: 'assets/products/sneakers.png'),
+      const Product(id: '6', title: 'Sneakers', price: 81, image: 'assets/products/sneakers.png'),
       // This means the cart contains only one product
     };
   }

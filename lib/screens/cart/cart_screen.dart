@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_cart/providers/cart_notifier_provider.dart';
 import '../../providers/products_provider.dart';
 
 // Now Converting StateFulWidget to ConsumerStateFulWidget
@@ -21,7 +22,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
   Widget build(BuildContext context) {
     // now we can use ref object inside thr build method
 
-    final cartProducts = ref.watch(reducedProducts);
+    final cartProducts = ref.watch(cartNotifierProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text(

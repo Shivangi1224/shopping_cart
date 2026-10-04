@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_cart/providers/cart_notifier_provider.dart';
 import 'package:shopping_cart/providers/products_provider.dart';
 import '../../shared/cart_icon.dart';
 
@@ -15,6 +16,7 @@ class HomeScreen extends ConsumerWidget {
     // WidgetRef -> through ref object we can use different methods to do things like
 
     final allProducts = ref.watch(productsProvider);
+    final cartProducts = ref.watch(cartNotifierProvider);
 
     // WATCH PROVIDER:
     // read provider data, watch provider data, get the updated data, refresh the provider state
@@ -28,14 +30,15 @@ class HomeScreen extends ConsumerWidget {
         actions: const [CartIcon()],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: GridView.builder(
           itemCount: allProducts.length,
           gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,
-            childAspectRatio: 0.9,
+            // childAspectRatio: 0.9,
+            mainAxisExtent: 250,
           ),
           itemBuilder:(context, index) {
             return Container(
@@ -73,6 +76,35 @@ class HomeScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+
+                  if(cartProducts.contains(allProducts[index])) // means cart already contains the product.
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                          'Remove',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 23,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+
+                  SizedBox(height: 10,),
+                  if(!cartProducts.contains(allProducts[index])) // means cart already contains the product.
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Add to Cart',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
                 ],
               ),
             );
