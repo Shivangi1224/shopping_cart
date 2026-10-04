@@ -19,3 +19,7 @@ class CartNotifier extends Notifier<Set<Product>>{
 }
 // CartNotifier is NOT a provider in itself we will make a notifier provider
 // which will use this class to provide the state that we will define here
+
+final cartNotifierProvider = NotifierProvider<CartNotifier, Set<Product>>(() { // provided two types in genric
+  return CartNotifier();
+});
