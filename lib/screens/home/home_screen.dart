@@ -65,7 +65,7 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   ),
 
-                  SizedBox(height: 18,),
+                  SizedBox(height: 10,),
 
                   Text( // to display the price of the product
                     '₹${allProducts[index].price}',
@@ -77,9 +77,13 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   ),
 
+                  SizedBox(height: 5,),
                   if(cartProducts.contains(allProducts[index])) // means cart already contains the product.
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ref.read(cartNotifierProvider.notifier)
+                            .removeProduct(allProducts[index]);
+                      },
                       child: const Text(
                           'Remove',
                         style: TextStyle(
@@ -91,7 +95,7 @@ class HomeScreen extends ConsumerWidget {
                       ),
                     ),
 
-                  SizedBox(height: 10,),
+                  SizedBox(height: 5,),
                   if(!cartProducts.contains(allProducts[index])) // means cart already contains the product.
                     TextButton(
                       onPressed: () {
