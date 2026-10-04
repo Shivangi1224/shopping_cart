@@ -16,6 +16,12 @@ class CartNotifier extends Notifier<Set<Product>>{
   }
 
   // methods to update the state
+  void addProduct(Product product) {
+    if(!state.contains(product)) {
+      state = {...state, product};
+    }
+  }
+
 }
 // CartNotifier is NOT a provider in itself we will make a notifier provider
 // which will use this class to provide the state that we will define here

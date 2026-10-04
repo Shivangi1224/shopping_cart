@@ -84,7 +84,7 @@ class HomeScreen extends ConsumerWidget {
                           'Remove',
                         style: TextStyle(
                           fontFamily: 'Poppins',
-                          fontSize: 23,
+                          fontSize: 20,
                           fontWeight: FontWeight.w400,
                           color: Colors.red,
                         ),
@@ -94,7 +94,10 @@ class HomeScreen extends ConsumerWidget {
                   SizedBox(height: 10,),
                   if(!cartProducts.contains(allProducts[index])) // means cart already contains the product.
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ref.read(cartNotifierProvider.notifier)
+                        .addProduct(allProducts[index]);// read() method when we need to access any method in the notifier
+                      },
                       child: const Text(
                         'Add to Cart',
                         style: TextStyle(
